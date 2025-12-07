@@ -1,47 +1,228 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع الأناشيد الإسلامية</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>بورتفوليو إبراهيم</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+:root {
+    --main: #1e8a6d;
+    --light: #ffffff;
+    --dark: #222;
+    --bg: #f8fbf8;
+    --card: #ffffffc9;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    margin: 0;
+    font-family: "Cairo", sans-serif;
+    color: var(--dark);
+    background: var(--bg);
+    transition: all 0.3s ease;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10%;
+    z-index: 100;
+}
+
+nav .logo {
+    color: var(--main);
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--main);
+}
+header {
+    height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('https://th.bing.com/th/id/R.a64e02fb3af96d623dc62f55c384c604?rik=lgB2pXI8T%2fSYDQ&pid=ImgRaw&r=0') center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+section {
+    padding: 100px 10% 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+h2 {
+    border-right: 6px solid var(--main);
+    padding-right: 14px;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.project-card,
+.skill-list li,
+.contact-box {
+    background: var(--card);
+    backdrop-filter: blur(6px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.project-card:hover,
+.skill-list li:hover,
+.contact-box:hover {
+    transform: translateY(-5px);
+}
+
+.dark {
+    --bg: #0f1816;
+    --dark: #eaeaea;
+    --card: #101c19da;
+    --shadow: 0 4px 20px rgba(0,0,0,0.7);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--main);
+    color: white;
+    margin-top: 40px;
+}
+#btn{
+    border:rgb(30, 204, 82) solid;
+    color: white;
+    text-decoration: none;
+    background-color:rgb(30, 204, 82);
+    border-radius: 1ch;
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>أناشيد إسلامية</h1>
-        <div id="admin-login-container">
-            <input type="password" id="admin-password-input" placeholder="كلمة مرور المشرف">
-            <button id="admin-login-btn">تسجيل دخول</button>
-        </div>
-        <button id="admin-logout-btn" style="display: none;">تسجيل خروج</button>
-    </header>
+<nav>
+    <h2 class="logo">إبراهيم أيمن</h2>
+    <ul>
+        <li><a href="#about">من أنا</a></li>
+        <li><a href="#skills">مهاراتي</a></li>
+        <li><a href="#projects">الأعمال</a></li>
+        <li><a href="#contact">تواصل</a></li>
+    </ul>
+</nav>
 
-    <main>
-        <div id="admin-panel">
-            <h2>لوحة تحكم المشرف</h2>
-            <form id="upload-form">
-                <input type="text" id="title" placeholder="عنوان النشيد" required>
-                <input type="text" id="artist" placeholder="اسم المنشد" required>
-                <input type="file" id="audio-file" accept="audio/mp3" required>
-                <input type="file" id="image-file" accept="image/*" required>
-                <button type="submit">رفع النشيد</button>
-            </form>
-            <hr>
-        </div>
+<header>
+    <h1>إبراهيم أيمن</h1>
+    <p class="ayah">﴿ وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ ﴾</p>
+</header>
 
-        <div id="anasheed-list">
-        </div>
-    </main>
+<section id="about">
+    <h2>من أنا</h2>
+    <p>
+        اسمي ابراهيم ايمن ابراهيم : مبرمج متواضع , اعمل في هذا المجال من 2024 وقد تعلمت العلم هذا على 
+        يد الاستاذ رضا عبد الفتاح عبد الدائم حفظه الله تعالى والسلام عليكم.
+    </p>
+</section>
 
-    <audio id="audio-player" controls></audio>
+<section id="skills">
+    <h2>مهاراتي</h2>
+    <ul class="skill-list">
+        <li>برمجة</li>
+        <li>كاتب كتب -لم ينشر بعد-</li>
+    </ul>
+</section>
 
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
-    <script src="main.js"></script>
+<section id="projects">
+    <h2>الأعمال</h2>
+
+    <div class="project-card">
+        <h3>موقع بيع الكترونيات وهمي -للمزاح فقط-</h3>
+        <a id="btn" href="https://ebr4techstore.netlify.app/" target="_blank">الدخول الى الموقع</a>
+    </div>
+
+    <div class="project-card">
+        <h3>موقع مركز البراء-</h3>
+        <a id="btn" href="https://h3macraft.github.io/Al-Braa-Center/" target="_blank">الدخول الى الموقع</a>
+    </div>
+
+</section>
+
+<section id="contact">
+    <h2>تواصل معي</h2>
+    <div class="contact-box">
+        <p>البريد: ebrahemayman196@mail.com</p>
+        <p>واتساب: 01060998583</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 — إبراهيم أيمن | جميع الحقوق محفوظة</p>
+</footer>
+<script>
+    const button = document.createElement("button");
+button.innerText = "الوضع الليلي";
+button.style.position = "fixed";
+button.style.bottom = "20px";
+button.style.left = "20px";
+button.style.padding = "10px 15px";
+button.style.border = "none";
+button.style.borderRadius = "8px";
+button.style.background = "#1e8a6d";
+button.style.color = "white";
+button.style.cursor = "pointer";
+button.style.zIndex = "200";
+button.style.boxShadow = "0 4px 10px rgba(0,0,0,0.3)";
+document.body.appendChild(button);
+
+button.onclick = () => {
+    document.body.classList.toggle("dark");
+    button.innerText = document.body.classList.contains("dark")
+        ? "الوضع النهاري"
+        : "الوضع الليلي";
+};
+
+document.documentElement.style.scrollBehavior = "smooth";
+
+window.addEventListener("scroll", () => {
+    document.querySelectorAll("section").forEach((s) => {
+        let rect = s.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 80) {
+            s.style.opacity = 1;
+            s.style.transform = "translateY(0)";
+        }
+    });
+});
+</script>
 </body>
 </html>
